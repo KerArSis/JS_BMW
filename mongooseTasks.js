@@ -11,6 +11,6 @@ var car = new Car({
 
 
 console.log(car)
-car.save(function(err, cat, affected){
+car.save(function(err, car, affected){
     console.log(car.title)
 })
