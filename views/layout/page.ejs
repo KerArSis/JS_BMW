@@ -14,15 +14,11 @@
               <li class="nav-item">
                   <a class="nav-link" href="/">Главная</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/cars/coupe">Coupe</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/cars/crossover">Crossover</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/cars/sedan">Sedan</a>
-              </li>
+              <% menu.forEach(function(car){ %>
+                <li class="nav-item">
+                <a class="nav-link" href="/cars/<%=car.nick%>"><%=car.title%></a>
+                </li>
+                <% }) %> 
           </ul>
           <ul class="navbar-nav navbar-right">
               <li>
