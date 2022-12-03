@@ -19,6 +19,13 @@ router.get('/logreg', function (req, res, next) {
   res.render('logreg', { error: null });
 });
 
+/* POST logout. */
+router.post('/logout', function (req, res, next) {
+  req.session.destroy()
+  res.locals.user = null
+  res.redirect('/')
+});
+
 /* GET login/registration page. */
 router.get('/logreg', function (req, res, next) {
   res.render('logreg', { title: 'Вход' });
