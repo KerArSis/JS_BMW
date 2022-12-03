@@ -3,13 +3,15 @@ var router = express.Router();
 var Car = require("../models/car").Car
 
 /* GET home page. */
-Car.find({}, { _id: 0, title: 1, nick: 1 }, function (err, menu) {
-  res.cookie('greeting', 'Hi!!!').render('index', {
-      title: 'Express',
-      menu: menu
-  });
-})
-
+router.get('/', function (req, res, next) {
+  Car.find({}, { _id: 0, title: 1, nick: 1 }, function (err, menu) {
+      req.session.greeting = "Hi!!!",
+          res.cookie('greeting', 'Hi!!!').render('index', {
+              title: 'Express',
+              menu: menu
+          });
+  })
+});
 
 /* Page coupe */
 router.get('/coupe', function(req, res, next) {
