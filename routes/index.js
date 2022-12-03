@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var checkAuth = require("./../middleware/checkAuth.js")
 var Car = require("../models/car").Car
 var User = require("./../models/user").User
 
